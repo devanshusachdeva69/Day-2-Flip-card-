@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+         .flip-box {
+            background-color: transparent;
+            width: 60vw;
+
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding-top: 52.65%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+
+        .flip-box-front,
+        .flip-box-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .flip-box-front {
+            color: black;
+        }
+
+
+        .flip-box-back {
+            background-color: #ff6f00;
+            color: white;
+            transform: rotateY(180deg);
+            display: grid;
+            align-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flip-box">
+        <div class="flip-box-inner">
+            <div class="flip-box-front">
+                <img src="Screenshot 2024-04-27 080214.png" alt="Paris">
+            </div>
+            <div class="flip-box-back">
+                <h1>Devanshu Sachdeva</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
